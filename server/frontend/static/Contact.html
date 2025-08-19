@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacts – bestcars</title>
+  <style>
+    :root { --blue:#2d6cdf; --border:#cdd6ea; }
+    * { box-sizing:border-box; }
+    body{
+      margin:0; padding:40px;
+      background:#f5f7fb; font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:#223;
+    }
+    .card{
+      max-width:980px; margin:auto; background:#fff;
+      border:2px solid var(--border); border-radius:22px; padding:28px;
+    }
+    .banner{
+      display:block; width:min(720px,100%); margin:0 auto 22px;
+      height:160px; object-fit:cover; border-radius:6px; background:#eaeef7;
+    }
+    .grid{
+      position:relative; display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start;
+      padding-top:6px;
+    }
+    /* ligne verticale */
+    .grid::before{
+      content:""; position:absolute; top:0; bottom:0; left:50%; width:1px; background:#b8c6e6;
+      transform:translateX(-50%);
+    }
+    .left{ display:flex; justify-content:center; align-items:center; padding:18px; }
+    .icon{ width:min(200px,75%); height:auto; fill:#35a7ff; stroke:#35a7ff; }
+    .right .item{ margin:0 0 12px 0; }
+    .right b{ display:block; color:var(--blue); margin-bottom:2px; }
+    a{ color:var(--blue); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    @media (max-width:700px){
+      .grid{ grid-template-columns:1fr; }
+      .grid::before{ display:none; }
+      .left{ padding-bottom:0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- Remplace la source par ta photo -->
+    <img class="banner" src="/static/cars.jpeg" alt="Salle d'exposition de voitures">
+
+    <section class="grid">
+      <!-- Icône casque (SVG inline, aucune ressource externe) -->
+      <div class="left">
+        <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+          <circle cx="32" cy="22" r="10"></circle>
+          <rect x="22" y="36" width="20" height="14" rx="7"></rect>
+          <path d="M8 26a24 24 0 0 1 48 0" fill="none" stroke-width="6"></path>
+          <rect x="8" y="28" width="5" height="14" rx="2"></rect>
+          <path d="M51 42h5a4 4 0 0 1 0 8h-8" fill="none" stroke-width="4"></path>
+        </svg>
+      </div>
+
+      <!-- Bloc contacts -->
+      <div class="right">
+        <p class="item">
+          <b>Contact Customer Service</b>
+          <a href="mailto:support@bestcars.com">support@bestcars.com</a>
+        </p>
+        <p class="item">
+          <b>Contact our National Advertising team</b>
+          <a href="mailto:NationalSales@bestcars.com">NationalSales@bestcars.com</a>
+        </p>
+        <p class="item">
+          <b>Contact our Public Relations team</b>
+          <a href="mailto:PR@bestcars.com">PR@bestcars.com</a>
+        </p>
+        <p class="item">
+          <b>Contact the bestcars.com offices</b>
+          <a href="tel:+13126111111">312-611-1111</a>
+        </p>
+        <p class="item">
+          <b>Become a bestcars.com car dealer</b>
+          <a href="#">(lien d’inscription)</a>
+        </p>
+        <p class="item">
+          <b>Visit</b>
+          <a href="https://growwithbestcars.com">growwithbestcars.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
